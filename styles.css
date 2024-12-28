@@ -1,0 +1,1111 @@
+:root {
+    --dark-bg: #0d1117;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-color: #238636;
+    --danger-color: #f85149;
+    --link-color: #58a6ff;
+    --hover-bg: #21262d;
+    --binance-yellow: #fcd535;
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* Header Styles */
+h1 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+h1 i {
+    color: var(--binance-yellow);
+}
+
+.price-tag {
+    background-color: var(--hover-bg);
+    border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-family: monospace;
+}
+
+/* Update Timer */
+.update-timer {
+    background-color: var(--hover-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+}
+
+.update-timer i {
+    color: var(--binance-yellow);
+}
+
+/* Form Controls */
+.form-select {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.form-select:focus {
+    background-color: var(--card-bg);
+    border-color: var(--link-color);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+/* Trading Signal */
+.signal-button {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.signal-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.signal-button:hover::before {
+    opacity: 1;
+}
+
+.signal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.buy-signal {
+    background: linear-gradient(135deg, rgba(35, 134, 54, 0.2), rgba(35, 134, 54, 0.3));
+    color: #3fb950;
+    border: 2px solid rgba(35, 134, 54, 0.5);
+}
+
+.sell-signal {
+    background: linear-gradient(135deg, rgba(248, 81, 73, 0.2), rgba(248, 81, 73, 0.3));
+    color: #ff4d4d;
+    border: 2px solid rgba(248, 81, 73, 0.5);
+}
+
+.neutral-signal {
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(88, 166, 255, 0.2));
+    color: var(--text-secondary);
+    border: 2px solid rgba(88, 166, 255, 0.3);
+    position: relative;
+}
+
+.neutral-signal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.neutral-signal:hover::before {
+    opacity: 1;
+}
+
+.neutral-signal .signal-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.neutral-signal .signal-type i {
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+.neutral-signal .signal-strength {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.neutral-signal .signal-strength i {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.signal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.signal-type {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.signal-type i {
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+.signal-strength {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-top: 0.25rem;
+}
+
+/* Analysis Text */
+.analysis-text {
+    background-color: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.metric-item {
+    background: linear-gradient(145deg, var(--hover-bg), var(--card-bg));
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.metric-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: var(--binance-yellow);
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.metric-label i {
+    color: var(--binance-yellow);
+}
+
+.metric-value {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+/* Sentiment Box */
+.sentiment-box {
+    background-color: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.sentiment-header, .prediction-header, .patterns-header {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sentiment-header i, .prediction-header i, .patterns-header i {
+    color: var(--binance-yellow);
+}
+
+.sentiment-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sentiment-score {
+    color: var(--text-secondary);
+}
+
+/* Prediction Box */
+.prediction-box {
+    background-color: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.prediction-header {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prediction-header .time-frame {
+    background-color: var(--card-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--binance-yellow);
+}
+
+.prediction-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.prediction-change {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.prediction-change.positive {
+    color: var(--accent-color);
+}
+
+.prediction-change.negative {
+    color: var(--danger-color);
+}
+
+.prediction-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    padding: 0.75rem;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.prediction-description .highlight {
+    color: var(--binance-yellow);
+    font-weight: 500;
+}
+
+.confidence-bar {
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    height: 24px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.confidence-level {
+    background: linear-gradient(90deg, var(--accent-color) 0%, var(--binance-yellow) 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-bg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: width 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Patterns Box */
+.patterns-box {
+    background-color: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.patterns-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pattern-item {
+    background: linear-gradient(145deg, var(--card-bg), var(--hover-bg));
+    padding: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.pattern-item:hover {
+    transform: translateX(4px);
+    border-color: var(--binance-yellow);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-name {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+.pattern-confidence {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Chart Controls */
+.chart-controls .btn-dark {
+    background-color: var(--hover-bg);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.chart-controls .btn-dark:hover {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 200px); /* Dynamic height based on viewport */
+    min-height: 1200px; /* Minimum height */
+}
+
+#tradingview-widget {
+    width: 100%;
+    height: 100% !important;
+    min-height: 1200px;
+}
+
+/* Adjust chart container in fullscreen mode */
+#tradingview-widget:fullscreen {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+}
+
+/* Make chart column taller */
+.chart-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card .card-body {
+    flex: 1;
+    padding: 0;
+    min-height: 1200px;
+}
+
+/* Support & Resistance Levels */
+.levels-box {
+    background-color: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.levels-header {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.levels-header i {
+    color: var(--binance-yellow);
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.level-item {
+    background: linear-gradient(145deg, var(--card-bg), var(--hover-bg));
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.level-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--binance-yellow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.level-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.level-value {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.level-strength {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    display: inline-block;
+}
+
+.resistance-value {
+    color: var(--danger-color);
+}
+
+.support-value {
+    color: var(--accent-color);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 0.75rem;
+    background: var(--hover-bg);
+    border-radius: 4px;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.5;
+    border-left: 3px solid var(--binance-yellow);
+}
+
+.card-description i {
+    color: var(--binance-yellow);
+    margin-right: 0.5rem;
+}
+
+.confidence-display {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.trade-metrics {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.trade-metrics .metric {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Risk Calculator Styles */
+.risk-calculator {
+    background: var(--hover-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.calculator-header {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.calculator-header i {
+    color: var(--binance-yellow);
+}
+
+.calculator-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.calculator-inputs .input-group {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.calculator-inputs .input-group-text {
+    background: var(--card-bg);
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.calculator-inputs .form-control {
+    background: var(--card-bg);
+    border: none;
+    color: var(--text-primary);
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.calculator-inputs .form-control:focus {
+    box-shadow: none;
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.calculator-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.result-item {
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.result-item span:first-child {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.result-item span:last-child {
+    color: var(--text-primary);
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Pattern Visualization Styles */
+.pattern-item {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pattern-item:hover {
+    transform: translateX(8px);
+    background: linear-gradient(145deg, var(--hover-bg), var(--card-bg));
+}
+
+.pattern-details {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+.pattern-item.active .pattern-details {
+    display: block;
+}
+
+.pattern-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.pattern-detail-item {
+    background: var(--hover-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.pattern-detail-label {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.pattern-detail-value {
+    color: var(--text-primary);
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pattern-detail-value span {
+    font-size: 0.875rem;
+}
+
+.pattern-detail-value .text-success {
+    color: var(--accent-color);
+}
+
+.pattern-detail-value .text-danger {
+    color: var(--danger-color);
+}
+
+.pattern-confidence-bar {
+    height: 4px;
+    background: var(--hover-bg);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.pattern-confidence-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--binance-yellow));
+    transition: width 0.3s ease;
+}
+
+.pattern-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Interactive Chart Controls */
+.chart-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chart-control-btn {
+    background: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-control-btn:hover {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--binance-yellow);
+}
+
+.chart-control-btn.active {
+    background: var(--card-bg);
+    color: var(--binance-yellow);
+    border-color: var(--binance-yellow);
+}
+
+/* Pattern Tooltip */
+.pattern-tooltip {
+    position: absolute;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+}
+
+.pattern-tooltip.visible {
+    opacity: 1;
+}
+
+.pattern-tooltip-header {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--binance-yellow);
+}
+
+.pattern-tooltip-content {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Pattern Alert Badge */
+.pattern-alert {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.pattern-alert.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.pattern-alert i {
+    color: var(--binance-yellow);
+}
+
+/* Pattern Highlight Animation */
+@keyframes patternHighlight {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.pattern-highlight {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: patternHighlight 2s ease forwards;
+}
+
+/* Pattern Legend */
+.pattern-legend {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    z-index: 100;
+}
+
+.pattern-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.pattern-legend-item:hover {
+    background: var(--hover-bg);
+}
+
+.pattern-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.pattern-legend-label {
+    color: var(--text-secondary);
+}
+
+/* Pattern Statistics */
+.pattern-stats {
+    background: var(--hover-bg);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.pattern-stats-header {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pattern-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.pattern-stat-item {
+    background: var(--card-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.pattern-stat-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.pattern-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Pattern Time Range Selector */
+.pattern-timerange {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: var(--hover-bg);
+    border-radius: 4px;
+}
+
+.pattern-timerange-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.pattern-timerange-select {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.pattern-timerange-select:focus {
+    border-color: var(--binance-yellow);
+    outline: none;
+}
+
+/* Pattern Success Rate Display */
+.pattern-success-rate {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.success-rate-chart {
+    flex: 1;
+    height: 4px;
+    background: var(--hover-bg);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.success-rate-value {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--binance-yellow));
+    transition: width 0.3s ease;
+}
+
+.success-rate-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Pattern Notification */
+.pattern-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-primary);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pattern-notification.visible {
+    transform: translateX(0);
+}
+
+.pattern-notification-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pattern-notification-header i {
+    color: var(--binance-yellow);
+}
+
+.pattern-notification-title {
+    font-weight: 600;
+    flex: 1;
+}
+
+.pattern-notification-close {
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.pattern-notification-content {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.pattern-notification-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.pattern-notification-button {
+    flex: 1;
+    padding: 0.25rem;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pattern-notification-button.primary {
+    background: var(--accent-color);
+    color: var(--text-primary);
+}
+
+.pattern-notification-button.secondary {
+    background: var(--hover-bg);
+    color: var(--text-secondary);
+} 
